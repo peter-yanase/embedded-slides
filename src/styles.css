@@ -1,0 +1,10 @@
+.reveal-viewport {
+  width: 100%;
+  aspect-ratio: 960 / 700;
+}
+
+/* Fixes for Obsidian overrides */
+
+.slide button {
+  box-shadow: unset;
+}

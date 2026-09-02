@@ -1,0 +1,10 @@
+{
+	"id": "embedded-slides",
+	"name": "Embedded Slides",
+	"version": "0.0.1",
+	"minAppVersion": "1.13.7",
+	"description": "TODO",
+	"author": "Peter Yanase",
+	"fundingUrl": "https://ko-fi.com/kdij",
+	"isDesktopOnly": false
+}
