@@ -3,6 +3,8 @@ export const wikilink = new RegExp(
 	"g",
 );
 
+export const mdRuby = new RegExp("{(.+?)\\|(.+?)}", "g");
+
 export const imageExtensions = [
 	"bmp",
 	"png",

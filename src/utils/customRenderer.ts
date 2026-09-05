@@ -1,6 +1,7 @@
 import {
 	audioExtensions,
 	imageExtensions,
+	mdRuby,
 	videoExtensions,
 	wikilink,
 } from "const/constants";
@@ -12,8 +13,11 @@ export function getCustomRenderer(vault: Vault) {
 			return (
 				token.text
 					// Wikilinks to local media files
-					.replace(wikilink, (match, ...args) => {
-						const groups = args.at(-1);
+					.replace(wikilink, (match: string, ...args: unknown[]) => {
+						const groups = args.at(-1) as {
+							path: string;
+							alt?: string;
+						};
 						const { path, alt } = groups;
 						const fileCandidate =
 							vault.getFileByPath(path) ??
@@ -51,7 +55,7 @@ export function getCustomRenderer(vault: Vault) {
 					})
 
 					// Ruby
-					.replace("{(.+?)\|(.+?)}", "<ruby>$1<rt>$2</rt></ruby>")
+					.replace(mdRuby, "<ruby>$1<rt>$2</rt></ruby>")
 			);
 		},
 	};

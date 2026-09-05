@@ -17,12 +17,12 @@ export default class EmbeddedSlides extends Plugin {
 			async (source: string, el: HTMLElement) => {
 				const wrappedSource = addMdWrapper(source);
 				this.deckSources.set(el, wrappedSource);
-				renderDeck(el, wrappedSource, this.app.vault);
+				await renderDeck(el, wrappedSource, this.app.vault);
 			},
 		);
 
-		this.app.workspace.on("active-leaf-change", () => {
-			handleLeafChange(this);
+		this.app.workspace.on("active-leaf-change", async () => {
+			await handleLeafChange(this);
 		});
 	}
 

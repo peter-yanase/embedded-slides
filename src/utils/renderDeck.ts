@@ -4,7 +4,11 @@ import { sanitizeHTMLToDom, Vault } from "obsidian";
 
 import { getCustomRenderer } from "./customRenderer";
 
-export function renderDeck(el: HTMLElement, source: string, vault: Vault) {
+export async function renderDeck(
+	el: HTMLElement,
+	source: string,
+	vault: Vault,
+) {
 	const revealViewportDiv = el.createDiv({
 		cls: "reveal-viewport",
 	});
@@ -29,5 +33,5 @@ export function renderDeck(el: HTMLElement, source: string, vault: Vault) {
 		},
 	});
 
-	deck.initialize();
+	await deck.initialize();
 }

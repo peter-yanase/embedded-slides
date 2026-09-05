@@ -1,7 +1,10 @@
 import EmbeddedSlides from "main";
 import { renderDeck } from "./renderDeck";
 
-export function rebuildDecks(leafContent: HTMLElement, plugin: EmbeddedSlides) {
+export async function rebuildDecks(
+	leafContent: HTMLElement,
+	plugin: EmbeddedSlides,
+) {
 	const languageBlocks = leafContent.querySelectorAll(
 		".block-language-slides",
 	);
@@ -9,9 +12,9 @@ export function rebuildDecks(leafContent: HTMLElement, plugin: EmbeddedSlides) {
 		// Avoid useless rebuild
 		if (block.querySelector("div.reveal-viewport")) return;
 
-		if (!(block instanceof HTMLElement)) return;
+		if (!block.instanceOf(HTMLElement)) return;
 		const source = plugin.deckSources.get(block);
 		if (!source) return;
-		renderDeck(block, source, plugin.app.vault);
+		await renderDeck(block, source, plugin.app.vault);
 	}
 }
