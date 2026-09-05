@@ -1,9 +1,9 @@
 {
 	"id": "embedded-slides",
 	"name": "Embedded Slides",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"minAppVersion": "1.13.7",
-	"description": "TODO",
+	"description": "Create slides directly inside your notes.",
 	"author": "Peter Yanase",
 	"fundingUrl": "https://ko-fi.com/kdij",
 	"isDesktopOnly": false
