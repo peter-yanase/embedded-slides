@@ -1,0 +1,8 @@
+.reveal-viewport {
+  width: 100%;
+  aspect-ratio: 960 / 700;
+}
+
+.slide button {
+  box-shadow: unset;
+}

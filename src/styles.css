@@ -1,10 +1,21 @@
-.reveal-viewport {
-  width: 100%;
-  aspect-ratio: 960 / 700;
-}
+@import "./css/fonts.css";
+@import "./css/reveal.css";
+@import "./css/obsidian.css";
+@import "./css/base.css";
 
-/* Fixes for Obsidian overrides */
+@import "./css/beige.css";
+@import "./css/black-contrast.css";
+@import "./css/black.css";
+@import "./css/blood.css";
+@import "./css/dracula.css";
+@import "./css/league.css";
+@import "./css/moon.css";
+@import "./css/night.css";
+@import "./css/serif.css";
+@import "./css/simple.css";
+@import "./css/sky.css";
+@import "./css/solarized.css";
+@import "./css/white-contrast.css";
+@import "./css/white.css";
 
-.slide button {
-  box-shadow: unset;
-}
+/* TODO: Crunch CSS, add original styles, convert fonts to base64 */

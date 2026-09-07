@@ -1,8 +1,8 @@
 import { MarkdownView } from "obsidian";
 
-import { removeDecks } from "./removeDecks";
-import { rebuildDecks } from "./rebuildDecks";
-import EmbeddedSlides from "main";
+import type EmbeddedSlides from "main";
+import { removeDecks } from "../deckhandlers/removeDecks";
+import { rebuildDecks } from "deckhandlers/rebuildDecks";
 
 export async function handleLeafChange(plugin: EmbeddedSlides) {
 	if (!plugin.app.workspace.layoutReady) return;

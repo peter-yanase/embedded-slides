@@ -1,0 +1,69 @@
+.reveal-viewport.dracula {
+  --r-background: #2b2b2b;
+  --r-background-color: #191919;
+  --r-main-font:
+    -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+  --r-main-font-size: 42px;
+  --r-main-color: #f8f8f2;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font:
+    -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+  --r-heading-color: #bd93f9;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: 600;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 2.5em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1em;
+  --r-code-font:
+    Fira Code, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+  --r-link-color: #ff79c6;
+  --r-link-color-dark: #ff41ae;
+  --r-link-color-hover: #8be9fd;
+  --r-selection-background-color: #44475a;
+  --r-selection-color: #fff;
+  --r-overlay-element-bg-color: 240, 240, 240;
+  --r-overlay-element-fg-color: 0, 0, 0;
+  --r-bold-color: #ffb86c;
+  --r-italic-color: #f1fa8c;
+  --r-inline-code-color: #50fa7b;
+  --r-list-bullet-color: #8be9fd;
+
+  section.has-light-background,
+  section.has-light-background h1,
+  section.has-light-background h2,
+  section.has-light-background h3,
+  section.has-light-background h4,
+  section.has-light-background h5,
+  section.has-light-background h6 {
+    color: #282a36;
+  }
+  .reveal strong,
+  .reveal b {
+    color: var(--r-bold-color);
+  }
+  .reveal em,
+  .reveal i,
+  .reveal blockquote {
+    color: var(--r-italic-color);
+  }
+  .reveal code {
+    color: var(--r-inline-code-color);
+  }
+  .reveal ul li::marker {
+    color: var(--r-list-bullet-color);
+  }
+  .reveal ol li::marker {
+    color: var(--r-list-bullet-color);
+  }
+}

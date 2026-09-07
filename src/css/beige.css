@@ -1,0 +1,42 @@
+.reveal-viewport.beige {
+  --r-background: radial-gradient(#fff, #f7f2d3);
+  --r-background-color: #f7f3de;
+  --r-main-font: "Source Sans Pro", Helvetica, sans-serif;
+  --r-main-font-size: 42px;
+  --r-main-color: #333;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: "Source Sans Pro", Helvetica, sans-serif;
+  --r-heading-color: #333;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: uppercase;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: 600;
+  --r-heading1-text-shadow:
+    0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa,
+    0 6px 1px #0000001a, 0 0 5px #0000001a, 0 1px 3px #0000004d,
+    0 3px 5px #0003, 0 5px 10px #00000040, 0 20px 20px #00000026;
+  --r-heading1-size: 2.5em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1em;
+  --r-code-font: monospace;
+  --r-link-color: #8b743d;
+  --r-link-color-dark: #766334;
+  --r-link-color-hover: #b39753;
+  --r-selection-background-color: #c2aa73;
+  --r-selection-color: #333;
+  --r-overlay-element-bg-color: 0 0 0;
+  --r-overlay-element-fg-color: 240 240 240;
+
+  section.has-dark-background,
+  section.has-dark-background h1,
+  section.has-dark-background h2,
+  section.has-dark-background h3,
+  section.has-dark-background h4,
+  section.has-dark-background h5,
+  section.has-dark-background h6 {
+    color: #fff;
+  }
+}

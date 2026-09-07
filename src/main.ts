@@ -1,23 +1,26 @@
 import { Plugin } from "obsidian";
 
-import { injectStyles } from "./utils/injectStyles";
-import { removeStyles } from "./utils/removeStyles";
 import { handleLeafChange } from "./utils/handleLeafChange";
-import { renderDeck } from "./utils/renderDeck";
-import { addMdWrapper } from "utils/addMdWrapper";
+import { renderDeck } from "./deckhandlers/renderDeck";
+import { preprocess } from "preprocessors/preprocess";
+import { DEFAULT_SETTINGS, LANGUAGE } from "const/constants";
+import { ESSettingTab } from "ui/settings";
+import { ESSettings } from "const/types";
 
 export default class EmbeddedSlides extends Plugin {
+	declare settings: ESSettings;
 	deckSources = new WeakMap<HTMLElement, string>();
 
 	async onload() {
-		injectStyles();
+		await this.loadSettings();
+
+		this.addSettingTab(new ESSettingTab(this.app, this));
 
 		this.registerMarkdownCodeBlockProcessor(
-			"slides",
+			LANGUAGE,
 			async (source: string, el: HTMLElement) => {
-				const wrappedSource = addMdWrapper(source);
-				this.deckSources.set(el, wrappedSource);
-				await renderDeck(el, wrappedSource, this.app.vault);
+				this.deckSources.set(el, await preprocess(source, this));
+				await renderDeck(el, this);
 			},
 		);
 
@@ -26,7 +29,15 @@ export default class EmbeddedSlides extends Plugin {
 		});
 	}
 
-	onunload(): void {
-		removeStyles();
+	async loadSettings() {
+		this.settings = Object.assign(
+			{},
+			DEFAULT_SETTINGS,
+			await this.loadData(),
+		);
+	}
+
+	async saveSettings() {
+		await this.saveData(this.settings);
 	}
 }

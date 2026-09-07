@@ -1,0 +1,42 @@
+.reveal-viewport.sky {
+  --r-background: radial-gradient(#f7fbfc, #add9e4);
+  --r-background-color: #f7fbfc;
+  --r-main-font: "Open Sans", sans-serif;
+  --r-main-font-size: 40px;
+  --r-main-color: #333;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: "Quicksand", sans-serif;
+  --r-heading-color: #333;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: -0.05em;
+  --r-heading-text-transform: uppercase;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: normal;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 3.77em;
+  --r-heading2-size: 2.11em;
+  --r-heading3-size: 1.55em;
+  --r-heading4-size: 1em;
+  --r-code-font: monospace;
+  --r-link-color: #2a76dd;
+  --r-link-color-dark: #1f64c1;
+  --r-link-color-hover: #4a8be2;
+  --r-selection-background-color: #2a76dd;
+  --r-selection-color: #fff;
+  --r-overlay-element-bg-color: 0 0 0;
+  --r-overlay-element-fg-color: 240 240 240;
+
+  section.has-dark-background,
+  section.has-dark-background h1,
+  section.has-dark-background h2,
+  section.has-dark-background h3,
+  section.has-dark-background h4,
+  section.has-dark-background h5,
+  section.has-dark-background h6 {
+    color: #fff;
+  }
+  .reveal a {
+    line-height: 1.3em;
+  }
+}

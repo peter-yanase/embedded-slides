@@ -4,15 +4,14 @@ import { globalIgnores, defineConfig } from "eslint/config";
 
 export default defineConfig(
 	globalIgnores([
+		"build",
 		"node_modules",
-		"dist",
 		"esbuild.config.mjs",
-		"version-bump.mjs",
-		"versions.json",
-		"main.js",
+		"eslint.config.mts",
 		"package.json",
 		"package-lock.json",
 		"tsconfig.json",
+		"versions.json",
 	]),
 	{
 		languageOptions: {

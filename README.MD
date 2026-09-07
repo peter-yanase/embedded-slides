@@ -4,14 +4,21 @@ Create slides directly inside your notes.
 
 ## How to use
 
+> [!WARNING]
+> The plugin is still in early development. I do not recommend using it.
+
 Write your slides inside fenced code blocks with "slides" as language.
 
 <pre><code>
 ```slides
 # Vegetables
+
 ---
+
 ## My favorite vegetables
+
 --
+
 - carrot
 - cabbage
 - lettuce
@@ -22,33 +29,30 @@ Refer to https://revealjs.com for details.
 
 ## Notable features
 
-- Wikilinks
-- Local media files
-- Captions
-- Ruby
+- Obsidian-native Markdown support
+- Themes
 
 ## Installing
 
-Refer to [https://obsidian.md/help/community-plugins](https://obsidian.md/help/community-plugins).
+You have to install it manually for now.
 
 ## Security
 
-- This plugin does not store or transmit any data and requires no internet connection.
+This plugin does not store or transmit any data and requires no internet connection.
 
 ## Roadmap
 
 ### Coming
 
-- Themes
+- Original themes
+- Captions
+- Ruby
 - Subtitle support for videos
 
 ### Planned
 
 - Pdf embedding
 - Mermaid support
-
-> [!TIP]
-> Embedded Slides is intentionally kept simple. If you want more features use Slides Extended (https://github.com/ebullient/obsidian-slides-extended).
 
 ## Licenses & Acknowledgments
 

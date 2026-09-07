@@ -1,0 +1,42 @@
+.reveal-viewport.league {
+  --r-background: radial-gradient(#555a5f, #1c1e20);
+  --r-background-color: #1c1e20;
+  --r-main-font: Lato, sans-serif;
+  --r-main-font-size: 40px;
+  --r-main-color: #eee;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: League Gothic, Impact, sans-serif;
+  --r-heading-color: #eee;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: uppercase;
+  --r-heading-text-shadow: 0px 0px 6px #0003;
+  --r-heading-font-weight: normal;
+  --r-heading1-text-shadow:
+    0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa,
+    0 6px 1px #0000001a, 0 0 5px #0000001a, 0 1px 3px #0000004d,
+    0 3px 5px #0003, 0 5px 10px #00000040, 0 20px 20px #00000026;
+  --r-heading1-size: 3.77em;
+  --r-heading2-size: 2.11em;
+  --r-heading3-size: 1.55em;
+  --r-heading4-size: 1em;
+  --r-code-font: monospace;
+  --r-link-color: #13daec;
+  --r-link-color-dark: #10b9c9;
+  --r-link-color-hover: #42e1f0;
+  --r-selection-background-color: #0fadbb;
+  --r-selection-color: #fff;
+  --r-overlay-element-bg-color: 240, 240, 240;
+  --r-overlay-element-fg-color: 0, 0, 0;
+
+  section.has-light-background,
+  section.has-light-background h1,
+  section.has-light-background h2,
+  section.has-light-background h3,
+  section.has-light-background h4,
+  section.has-light-background h5,
+  section.has-light-background h6 {
+    color: #222;
+  }
+}

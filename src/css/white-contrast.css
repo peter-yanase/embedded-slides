@@ -1,0 +1,39 @@
+.reveal-viewport.white-contrast {
+  --r-background: #2b2b2b;
+  --r-background-color: #fff;
+  --r-main-font: "Source Sans Pro", Helvetica, sans-serif;
+  --r-main-font-size: 42px;
+  --r-main-color: #000;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: "Source Sans Pro", Helvetica, sans-serif;
+  --r-heading-color: #000;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: uppercase;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: 600;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 2.5em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1em;
+  --r-code-font: monospace;
+  --r-link-color: #2a76dd;
+  --r-link-color-dark: #1f64c1;
+  --r-link-color-hover: #4a8be2;
+  --r-selection-background-color: #2a76dd;
+  --r-selection-color: #fff;
+  --r-overlay-element-bg-color: 0, 0, 0;
+  --r-overlay-element-fg-color: 240, 240, 240;
+
+  section.has-dark-background,
+  section.has-dark-background h1,
+  section.has-dark-background h2,
+  section.has-dark-background h3,
+  section.has-dark-background h4,
+  section.has-dark-background h5,
+  section.has-dark-background h6 {
+    color: #fff;
+  }
+}

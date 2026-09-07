@@ -1,30 +1,31 @@
-export const wikilink = new RegExp(
-	["!\\[\\[(?<path>.+?)(?:\\|(?<alt>.*?))?\\]\\]"].join(""),
-	"g",
-);
+import { ESSettings } from "./types";
 
-export const mdRuby = new RegExp("{(.+?)\\|(.+?)}", "g");
+export const DEFAULT_SETTINGS: ESSettings = {
+	horizontalSeparator: "---",
+	verticalSeparator: "--",
+	theme: "serif",
+};
 
-export const imageExtensions = [
-	"bmp",
-	"png",
-	"jpg",
-	"jpeg",
-	"gif",
-	"svg",
-	"webp",
-	"avif",
-];
+export const HORIZONTAL_SEPARATOR_PLACEHOLDER = "@@HORIZONTAL_SEPARATOR@@";
+export const VERTICAL_SEPARATOR_PLACEHOLDER = "@@VERTICAL_SEPARATOR@@";
 
-export const audioExtensions = [
-	"mp3",
-	"wav",
-	"m4a",
-	"3gp",
-	"flac",
-	"ogg",
-	"oga",
-	"opus",
-];
+export const LANGUAGE = "slides";
+export const LANGUAGE_BLOCK = ".block-language-slides";
+export const SLIDE_DIV = "div.reveal-viewport";
 
-export const videoExtensions = ["mp4", "webm", "ogv", "mov", "mkv"];
+export const THEMES = [
+	"beige",
+	"black-contrast",
+	"black",
+	"blood",
+	"dracula",
+	"league",
+	"moon",
+	"night",
+	"serif",
+	"simple",
+	"sky",
+	"solarized",
+	"white-contrast",
+	"white",
+] as const;
