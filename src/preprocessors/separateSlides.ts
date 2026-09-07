@@ -1,22 +1,33 @@
 import {
-	HORIZONTAL_SEPARATOR_PLACEHOLDER,
-	VERTICAL_SEPARATOR_PLACEHOLDER,
-} from "const/constants";
+	HORIZONTAL_SEPARATOR_MARKER,
+	VERTICAL_SEPARATOR_MARKER,
+} from 'const/constants';
 
 export function separateSlides(text: string): string {
-	const section = (content: string) => `<section>${content}</section>`;
-	const separator = (marker: string) => `<p dir="auto">${marker}</p>`;
+	function convertToRenderedParagraph(text: string): string {
+		return `<p dir="auto">${text}</p>`;
+	}
+
+	function convertToHtmlSection(text: string): string {
+		return `<section>${text}</section>`;
+	}
 
 	return text
-		.split(separator(HORIZONTAL_SEPARATOR_PLACEHOLDER))
+		.split(convertToRenderedParagraph(HORIZONTAL_SEPARATOR_MARKER))
 		.map((horizontalSlide) => {
-			const slides = horizontalSlide.split(
-				separator(VERTICAL_SEPARATOR_PLACEHOLDER),
+			const verticalSlides: string[] = horizontalSlide.split(
+				convertToRenderedParagraph(VERTICAL_SEPARATOR_MARKER),
 			);
 
-			return slides.length === 1
-				? section(slides[0] ?? "")
-				: section(slides.map(section).join(""));
+			return convertToHtmlSection(
+				verticalSlides.length === 1
+					? (verticalSlides[0] ?? '')
+					: verticalSlides
+							.map((verticalSlide) =>
+								convertToHtmlSection(verticalSlide),
+							)
+							.join(''),
+			);
 		})
-		.join("");
+		.join('');
 }

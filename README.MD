@@ -1,17 +1,24 @@
 # Embedded Slides
 
-Create slides directly inside your notes.
+<p align="center">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fpeter-yanase%2Fembedded-slides%2Fraw%2Frefs%2Fheads%2Fmain%2Fmanifest.json&query=version&style=for-the-badge" alt="version badge">
+  <img src="https://img.shields.io/github/downloads/peter-yanase/embedded-slides/total" alt="downloads badge">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fpeter-yanase%2Fembedded-slides%2Fraw%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=license&style=for-the-badge" alt="license badge">
+</p>
+
+<p align="center">Create slides directly inside your notes and embed them everywhere.</p>
+
+---
 
 ## How to use
-
-> [!WARNING]
-> The plugin is still in early development. I do not recommend using it.
 
 Write your slides inside fenced code blocks with "slides" as language.
 
 <pre><code>
 ```slides
 # Vegetables
+
+![[vegetables.jpg]]
 
 ---
 
@@ -25,7 +32,7 @@ Write your slides inside fenced code blocks with "slides" as language.
 ```
 </code></pre>
 
-Refer to https://revealjs.com for details.
+There is no special syntax, for Markdown refer to https://obsidian.md/help/ and for everything else to https://revealjs.com.
 
 ## Notable features
 
@@ -34,7 +41,7 @@ Refer to https://revealjs.com for details.
 
 ## Installing
 
-You have to install it manually for now.
+Refer to https://obsidian.md/help/community-plugins.
 
 ## Security
 
@@ -44,13 +51,14 @@ This plugin does not store or transmit any data and requires no internet connect
 
 ### Coming
 
+- Font support
 - Original themes
 - Captions
-- Ruby
 - Subtitle support for videos
 
 ### Planned
 
+- External Markdown support
 - Pdf embedding
 - Mermaid support
 

@@ -1,15 +1,18 @@
-import { Plugin } from "obsidian";
+import { Plugin } from 'obsidian';
+import { type RevealApi } from 'reveal.js';
 
-import { handleLeafChange } from "./utils/handleLeafChange";
-import { renderDeck } from "./deckhandlers/renderDeck";
-import { preprocess } from "preprocessors/preprocess";
-import { DEFAULT_SETTINGS, LANGUAGE } from "const/constants";
-import { ESSettingTab } from "ui/settings";
-import { ESSettings } from "const/types";
+import type { DeckProperties, ESSettings } from 'const/types';
+import { ESSettingTab } from 'ui/ESSettingTab';
+import { buildDeck } from './deckhandlers/buildDeck';
+import { preprocessContent } from 'utils/preprocessContent';
+import { DEFAULT_SETTINGS, LANGUAGE } from 'const/constants';
+import { adjustDeckLayouts } from 'deckhandlers/adjustDeckLayouts';
+import { getYaml } from 'utils/getYaml';
+import { toggleDecks } from 'deckhandlers/toggleDecks';
 
 export default class EmbeddedSlides extends Plugin {
 	declare settings: ESSettings;
-	deckSources = new WeakMap<HTMLElement, string>();
+	deckInstances = new Map<HTMLElement, RevealApi>();
 
 	async onload() {
 		await this.loadSettings();
@@ -18,22 +21,47 @@ export default class EmbeddedSlides extends Plugin {
 
 		this.registerMarkdownCodeBlockProcessor(
 			LANGUAGE,
-			async (source: string, el: HTMLElement) => {
-				this.deckSources.set(el, await preprocess(source, this));
-				await renderDeck(el, this);
+			async (source, el): Promise<void> => {
+				const yaml: DeckProperties | undefined = getYaml(source);
+
+				const preprocessedContent: string = await preprocessContent(
+					source,
+					this,
+				);
+
+				const deck: RevealApi = await buildDeck(
+					el,
+					preprocessedContent,
+					yaml,
+					this.settings,
+				);
+
+				await deck.initialize();
+
+				this.deckInstances.set(el, deck);
 			},
 		);
 
-		this.app.workspace.on("active-leaf-change", async () => {
-			await handleLeafChange(this);
-		});
+		this.registerEvent(
+			this.app.workspace.on(
+				'active-leaf-change',
+				async () => await toggleDecks(this),
+			),
+		);
+
+		this.registerEvent(
+			this.app.workspace.on(
+				'resize',
+				async () => await adjustDeckLayouts(this),
+			),
+		);
 	}
 
 	async loadSettings() {
 		this.settings = Object.assign(
 			{},
 			DEFAULT_SETTINGS,
-			await this.loadData(),
+			(await this.loadData()) as ESSettings,
 		);
 	}
 

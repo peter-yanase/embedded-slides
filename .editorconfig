@@ -5,12 +5,34 @@ root = true
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
+
+[*.mts]
+indent_style = space
+indent_size = 4
+quote_type = single
+tab_width = 4
+
+[*.mjs]
+indent_style = space
+indent_size = 4
+quote_type = single
+tab_width = 4
+
+[*.json]
+indent_style = space
+indent_size = 4
+quote_type = double
+tab_width = 4
+
+[*.ts]
 indent_style = tab
 indent_size = 4
+quote_type = single
 tab_width = 4
 
 [*.css]
 indent_style = space
 indent_size = 2
+quote_type = double
 tab_width = 2
 
