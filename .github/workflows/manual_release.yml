@@ -1,9 +1,12 @@
-name: Prepare release
+name: Prepare release manually
 
 on:
-  push:
-    tags:
-      - "*"
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "Tag to release"
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -16,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag_name }}
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -34,6 +39,7 @@ jobs:
       - name: Draft release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ inputs.tag_name }}
           draft: true
           generate_release_notes: true
           files: |
