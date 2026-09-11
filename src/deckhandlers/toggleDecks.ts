@@ -25,7 +25,7 @@ export async function toggleDecks(plugin: EmbeddedSlides): Promise<void> {
 			containerEl.parentElement?.style.display === 'none';
 
 		for (const block of blocks) {
-			const deck: RevealApi | undefined = plugin.deckInstances.get(block);
+			const deck = plugin.deckInstances.get(block);
 			if (deck === undefined) continue;
 
 			if (isHidden === true) {
