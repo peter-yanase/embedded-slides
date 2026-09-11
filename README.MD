@@ -1,9 +1,9 @@
-# Embedded Slides
+<h1 align="center">Embedded Slides</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fpeter-yanase%2Fembedded-slides%2Fraw%2Frefs%2Fheads%2Fmain%2Fmanifest.json&query=version&style=for-the-badge" alt="version badge">
-  <img src="https://img.shields.io/github/downloads/peter-yanase/embedded-slides/total" alt="downloads badge">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fpeter-yanase%2Fembedded-slides%2Fraw%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=license&style=for-the-badge" alt="license badge">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fpeter-yanase%2Fembedded-slides%2Fraw%2Frefs%2Fheads%2Fmain%2Fmanifest.json&query=version&style=for-the-badge&label=version" alt="version badge">
+  <img src="https://img.shields.io/github/downloads/peter-yanase/embedded-slides/total?style=for-the-badge" alt="downloads badge">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fpeter-yanase%2Fembedded-slides%2Fraw%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=license&style=for-the-badge&label=license" alt="license badge">
 </p>
 
 <p align="center">Create slides directly inside your notes and embed them everywhere.</p>
