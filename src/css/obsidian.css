@@ -6,3 +6,8 @@
 .slide button {
   box-shadow: unset;
 }
+
+.reveal .internal-embed img:not([width]) {
+  max-width: 95%;
+  max-height: 620px;
+}

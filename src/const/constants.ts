@@ -1,6 +1,4 @@
-import { ESSettings } from './types';
-
-export const DEFAULT_SETTINGS: ESSettings = {
+export const DEFAULT_SETTINGS = {
 	horizontalSeparator: '\n---\n',
 	verticalSeparator: '\n--\n',
 	theme: 'black',
@@ -9,13 +7,13 @@ export const DEFAULT_SETTINGS: ESSettings = {
 	slideNumberFormat: 'c/t',
 };
 
-export const HORIZONTAL_SEPARATOR_MARKER: string = '@@HORIZONTAL_SEPARATOR@@';
-export const VERTICAL_SEPARATOR_MARKER: string = '@@VERTICAL_SEPARATOR@@';
+export const HORIZONTAL_SEPARATOR_MARKER = '@@HORIZONTAL_SEPARATOR@@';
+export const VERTICAL_SEPARATOR_MARKER = '@@VERTICAL_SEPARATOR@@';
 
-export const LANGUAGE: string = 'slides';
-export const LANGUAGE_BLOCK: string = 'div.block-language-slides';
+export const LANGUAGE = 'slides';
+export const LANGUAGE_BLOCK = 'div.block-language-slides';
 
-export const THEMES: string[] = [
+export const THEMES = [
 	'beige',
 	'black-contrast',
 	'black',
@@ -32,9 +30,9 @@ export const THEMES: string[] = [
 	'white',
 ];
 
-export const CONTROLS_LAYOUT: string[] = ['edges', 'bottom-right'];
+export const CONTROLS_LAYOUT = ['edges', 'bottom-right'];
 
-export const SLIDE_NUMBER_FORMAT: Record<string, string> = {
+export const SLIDE_NUMBER_FORMAT = {
 	'h.v': 'horizontal . vertical',
 	'h/v': 'horizontal / vertical',
 	c: 'flattened count',

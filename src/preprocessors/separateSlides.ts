@@ -3,19 +3,19 @@ import {
 	VERTICAL_SEPARATOR_MARKER,
 } from 'const/constants';
 
-export function separateSlides(text: string): string {
-	function convertToRenderedParagraph(text: string): string {
+export function separateSlides(text: string) {
+	function convertToRenderedParagraph(text: string) {
 		return `<p dir="auto">${text}</p>`;
 	}
 
-	function convertToHtmlSection(text: string): string {
+	function convertToHtmlSection(text: string) {
 		return `<section>${text}</section>`;
 	}
 
 	return text
 		.split(convertToRenderedParagraph(HORIZONTAL_SEPARATOR_MARKER))
 		.map((horizontalSlide) => {
-			const verticalSlides: string[] = horizontalSlide.split(
+			const verticalSlides = horizontalSlide.split(
 				convertToRenderedParagraph(VERTICAL_SEPARATOR_MARKER),
 			);
 

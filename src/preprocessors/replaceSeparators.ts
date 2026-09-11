@@ -7,8 +7,8 @@ import type { ESSettings } from 'const/types';
 export function replaceSeparators(
 	content: string,
 	settings: ESSettings,
-): string {
-	function convertToMDParagraph(text: string): string {
+) {
+	function convertToMDParagraph(text: string) {
 		return `\n\n${text}\n\n`;
 	}
 
@@ -16,7 +16,7 @@ export function replaceSeparators(
 		text: string,
 		separator: string,
 		marker: string,
-	): string {
+	) {
 		return text.replaceAll(
 			new RegExp(separator, 'g'),
 			convertToMDParagraph(marker),

@@ -1,6 +1,7 @@
 import obsidianmd from 'eslint-plugin-obsidianmd';
 import globals from 'globals';
 import { globalIgnores, defineConfig } from 'eslint/config';
+import tseslint from 'typescript-eslint';
 
 export default defineConfig(
     globalIgnores([
@@ -14,6 +15,10 @@ export default defineConfig(
         'versions.json',
     ]),
     {
+        extends: [
+            tseslint.configs.strictTypeChecked,
+            tseslint.configs.stylisticTypeChecked,
+        ],
         languageOptions: {
             globals: {
                 ...globals.browser,

@@ -1,6 +1,6 @@
 {
     "name": "embedded-slides",
-    "version": "0.9.0",
+    "version": "0.9.1",
     "description": "Create slides directly inside your notes.",
     "main": "main.js",
     "type": "module",

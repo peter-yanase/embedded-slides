@@ -1,7 +1,7 @@
 {
     "id": "embedded-slides",
     "name": "Embedded Slides",
-    "version": "0.9.0",
+    "version": "0.9.1",
     "minAppVersion": "1.13.7",
     "description": "Create and embed your slides anywhere.",
     "author": "Peter Yanase",

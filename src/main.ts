@@ -1,7 +1,7 @@
 import { Plugin } from 'obsidian';
-import { type RevealApi } from 'reveal.js';
+import { RevealApi } from 'reveal.js';
 
-import type { DeckProperties, ESSettings } from 'const/types';
+import type { ESSettings } from 'const/types';
 import { ESSettingTab } from 'ui/ESSettingTab';
 import { buildDeck } from './deckhandlers/buildDeck';
 import { preprocessContent } from 'utils/preprocessContent';
@@ -21,15 +21,15 @@ export default class EmbeddedSlides extends Plugin {
 
 		this.registerMarkdownCodeBlockProcessor(
 			LANGUAGE,
-			async (source, el): Promise<void> => {
-				const yaml: DeckProperties | undefined = getYaml(source);
+			async (source, el) => {
+				const yaml = getYaml(source);
 
-				const preprocessedContent: string = await preprocessContent(
+				const preprocessedContent = await preprocessContent(
 					source,
 					this,
 				);
 
-				const deck: RevealApi = await buildDeck(
+				const deck = await buildDeck(
 					el,
 					preprocessedContent,
 					yaml,
@@ -43,17 +43,15 @@ export default class EmbeddedSlides extends Plugin {
 		);
 
 		this.registerEvent(
-			this.app.workspace.on(
-				'active-leaf-change',
-				async () => await toggleDecks(this),
-			),
+			this.app.workspace.on('active-leaf-change', async () => {
+				await toggleDecks(this);
+			}),
 		);
 
 		this.registerEvent(
-			this.app.workspace.on(
-				'resize',
-				async () => await adjustDeckLayouts(this),
-			),
+			this.app.workspace.on('resize', async () => {
+				await adjustDeckLayouts(this);
+			}),
 		);
 	}
 

@@ -7,7 +7,7 @@ import { separateSlides } from '../preprocessors/separateSlides';
 export async function preprocessContent(
 	original: string,
 	plugin: EmbeddedSlides,
-): Promise<string> {
+) {
 	let preprocessed = original;
 
 	preprocessed = removeFrontmatter(preprocessed);

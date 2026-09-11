@@ -1,9 +1,9 @@
 import { type App, Component, MarkdownRenderer } from 'obsidian';
 
-export async function renderMarkdown(text: string, app: App): Promise<string> {
-	const throwawayDiv: HTMLElement = createDiv();
-	const emptyPath: string = '';
-	const dummyComponent: Component = new Component();
+export async function renderMarkdown(text: string, app: App) {
+	const throwawayDiv = createDiv();
+	const emptyPath = '';
+	const dummyComponent = new Component();
 	await MarkdownRenderer.render(
 		app,
 		text,

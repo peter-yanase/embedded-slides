@@ -1,21 +1,19 @@
-import { RevealConfig } from 'reveal.js';
-
 export interface ESSettings {
 	horizontalSeparator: string;
 	verticalSeparator: string;
 	theme: string;
 	slideNumberVisibility: boolean;
 	slideNumberFormat: 'h.v' | 'h/v' | 'c' | 'c/t';
-	controlsLayout: RevealConfig['controlsLayout'];
+	controlsLayout: 'edges' | 'bottom-right';
 }
 
 export interface DeckProperties {
 	theme?: string;
-	slideNumber?: RevealConfig['slideNumber'];
-	controlsLayout?: RevealConfig['controlsLayout'];
+	slideNumber?: 'h.v' | 'h/v' | 'c' | 'c/t' | boolean;
+	controlsLayout?: 'edges' | 'bottom-right';
 }
 
-export type DeckSource = {
+export interface DeckSource {
 	contents: string;
 	properties: DeckProperties | undefined;
-};
+}

@@ -2,13 +2,12 @@ import { type WorkspaceLeaf } from 'obsidian';
 
 import type EmbeddedSlides from 'main';
 import { LANGUAGE_BLOCK } from 'const/constants';
-import { type RevealApi } from 'reveal.js';
 import { deckHasHeight } from 'utils/deckHasHeight';
 
-export async function toggleDecks(plugin: EmbeddedSlides): Promise<void> {
-	if (plugin.app.workspace.layoutReady === false) return;
+export async function toggleDecks(plugin: EmbeddedSlides) {
+	if (!plugin.app.workspace.layoutReady) return;
 
-	const rootLeaves: Set<WorkspaceLeaf> = new Set();
+	const rootLeaves = new Set<WorkspaceLeaf>();
 	plugin.app.workspace.iterateRootLeaves((rootLeaf) => {
 		rootLeaves.add(rootLeaf);
 	});
@@ -16,21 +15,23 @@ export async function toggleDecks(plugin: EmbeddedSlides): Promise<void> {
 	for (const rootLeaf of rootLeaves) {
 		const { containerEl } = rootLeaf.view;
 
-		const blocks: NodeListOf<HTMLElement> =
+		const blocks =
 			containerEl.querySelectorAll<HTMLElement>(LANGUAGE_BLOCK);
 
 		if (blocks.length === 0) return;
 
-		const isHidden: boolean =
+		const isHidden =
 			containerEl.parentElement?.style.display === 'none';
 
 		for (const block of blocks) {
 			const deck = plugin.deckInstances.get(block);
 			if (deck === undefined) continue;
 
-			if (isHidden === true) {
-				deck?.destroy();
-			} else if (isHidden === false && deckHasHeight(deck) === false) {
+			if (isHidden) {
+				deck.destroy();
+			}
+
+			if (!deckHasHeight(deck)) {
 				await deck.initialize();
 			}
 		}
