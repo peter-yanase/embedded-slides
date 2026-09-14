@@ -11,9 +11,9 @@ export async function replaceContent(
 
 	let newContent = [];
 	for (const link of links) {
-		const withoutBrackets = link.match('\\[\\[(.+?)\\]\\]');
+		const withoutBrackets = /\[\[(.+?)\]\]/.exec(link);
 		if (!withoutBrackets) return 'Use wikilinks.';
-		const withoutAlias = withoutBrackets[1]?.split('|')[0];
+		const withoutAlias = withoutBrackets[1]?.split('|')[0] ?? '';
 		const path = `${withoutAlias}.md`;
 		const vault = plugin.app.vault;
 		const file =
