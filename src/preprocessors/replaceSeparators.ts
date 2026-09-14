@@ -3,20 +3,10 @@ import {
 	VERTICAL_SEPARATOR_MARKER,
 } from 'const/constants';
 import type { ESSettings } from 'const/types';
+import { convertToMDParagraph } from 'utils/convertToMdParagraph';
 
-export function replaceSeparators(
-	content: string,
-	settings: ESSettings,
-) {
-	function convertToMDParagraph(text: string) {
-		return `\n\n${text}\n\n`;
-	}
-
-	function replaceSeparator(
-		text: string,
-		separator: string,
-		marker: string,
-	) {
+export function replaceSeparators(content: string, settings: ESSettings) {
+	function replaceSeparator(text: string, separator: string, marker: string) {
 		return text.replaceAll(
 			new RegExp(separator, 'g'),
 			convertToMDParagraph(marker),

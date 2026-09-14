@@ -9,6 +9,7 @@ import { DEFAULT_SETTINGS, LANGUAGE } from 'const/constants';
 import { adjustDeckLayouts } from 'deckhandlers/adjustDeckLayouts';
 import { getYaml } from 'utils/getYaml';
 import { toggleDecks } from 'deckhandlers/toggleDecks';
+import { replaceContent } from 'utils/insertExternalSlides';
 
 export default class EmbeddedSlides extends Plugin {
 	declare settings: ESSettings;
@@ -22,10 +23,17 @@ export default class EmbeddedSlides extends Plugin {
 		this.registerMarkdownCodeBlockProcessor(
 			LANGUAGE,
 			async (source, el) => {
-				const yaml = getYaml(source);
+				let content = source;
+
+				const yaml = getYaml(content);
+
+				const externalSlides = yaml?.slides;
+				if (externalSlides) {
+					content = await replaceContent(externalSlides, this);
+				}
 
 				const preprocessedContent = await preprocessContent(
-					source,
+					content,
 					this,
 				);
 

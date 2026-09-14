@@ -36,10 +36,11 @@ There is no special syntax, for Markdown refer to https://obsidian.md/help/ and 
 
 - Obsidian-native Markdown support
 - Themes
+- External Markdown support
 
 ## Installing
 
-Refer to https://obsidian.md/help/community-plugins.
+You can either manually install this plugin or use [BRAT](https://community.obsidian.md/plugins/obsidian42-brat).
 
 ## Security
 
@@ -53,10 +54,10 @@ This plugin does not store or transmit any data and requires no internet connect
 - Original themes
 - Captions
 - Subtitle support for videos
+- Documentation
 
 ### Planned
 
-- External Markdown support
 - Pdf embedding
 - Mermaid support
 

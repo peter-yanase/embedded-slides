@@ -11,6 +11,7 @@ export interface DeckProperties {
 	theme?: string;
 	slideNumber?: 'h.v' | 'h/v' | 'c' | 'c/t' | boolean;
 	controlsLayout?: 'edges' | 'bottom-right';
+	slides?: string;
 }
 
 export interface DeckSource {
