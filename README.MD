@@ -62,6 +62,7 @@ This plugin does not store or transmit any data and requires no internet connect
 
 - Pdf embedding
 - Mermaid support
+- Adapt to light/dark theme
 
 ## Licenses & Acknowledgments
 
